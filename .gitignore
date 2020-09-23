@@ -1,0 +1,6 @@
+# ignore target folder
+target/
+
+# ignore  files
+.vscode
+/node_modules
