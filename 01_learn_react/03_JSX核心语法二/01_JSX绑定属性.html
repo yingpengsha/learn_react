@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="../react/react.development.js"></script>
+    <script src="../react/react-dom.development.js"></script>
+    <script src="../react/babel.min.js"></script>
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            title: "title1",
+            imgUrl:
+              "http://p2.music.126.net/lQbG0aMgw0UE1kqQmtAFXA==/109951165284378892.jpg",
+            link: "www.baidu.com",
+            adtive: true,
+          };
+        }
+        getSizeImage(imgUrl, size) {
+          return imgUrl + `?param=${size}x${size}`;
+        }
+        render() {
+          const { title, imgUrl, link, active } = this.state;
+          return (
+            <div>
+              
+              <h2 title={title}>我是标题</h2>
+              <img src={this.getSizeImage(imgUrl, 140)} alt="" />
+              <a href={link} target="_blank">
+                link
+              </a>
+              <div className={"test" + active? "active":""}>i am div</div>
+              <div className={"test" + active? "active":""}>i am div too</div>
+              <div style={{color:"red",fontSize:"50px"}}>内联样式</div>
+            </div>
+          );
+        }
+      }
+      ReactDOM.render(<App />, document.getElementById("app"));
+    </script>
+  </body>
+</html>
