@@ -15,17 +15,11 @@
         constructor() {
           super();
           this.state = {
-            movies: ["信条", "战狼", "流浪地球", "黑暗骑士"],
           };
         }
         render() {
           return (
             <div>
-              <ul>
-                {this.state.movies.map((item, index, arr) => {
-                  return <li>{item}</li>;
-                })}
-              </ul>
             </div>
           );
         }
